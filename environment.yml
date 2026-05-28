@@ -1,11 +1,19 @@
 channels:
+  - pytorch
+  - nvidia
   - conda-forge
   - https://repo.anaconda.com/pkgs/main
   - https://repo.anaconda.com/pkgs/r
 dependencies:
   - python=3.10
-  - conda-forge::tensorflow-gpu==2.10
+  - pytorch
+  - pytorch-cuda
   - pandas
   - tqdm
   - scikit-learn
   - pyedflib
+  - numpy
+  - h5py
+  - scipy
+  - xgboost
+  - timm

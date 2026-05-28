@@ -1,7 +1,6 @@
-from importlib import resources as impresources
 from pathlib import Path
-from classes.data import Data
-from classes.annotation import Annotation
+from data_loader.data import Data
+from data_loader.annotation import Annotation
 
 data_path = Path('/esat/biomeddata/SeizeIT2/bids')       # path to dataset
 
@@ -17,7 +16,7 @@ annotations = list()
 
 for rec in recordings:
     print(rec[0] + ' ' + rec[1])
-    rec_data = Data.loadData(data_path.as_posix(), rec, modalities=['eeg', 'ecg', 'mov'])
+    rec_data = Data.loadData(data_path.as_posix(), rec, modalities=['eeg', 'ecg', 'eda', 'gaze'])
     rec_annotations = Annotation.loadAnnotation(data_path.as_posix(), rec)
 
     data.append(rec_data)
